@@ -128,6 +128,6 @@ You can deploy the backend to platforms like Heroku, Render, or DigitalOcean, an
 Make sure to update REACT_APP_BACKEND_URL to your live API domain in .env.production.
 
 
-📄 License
+# 📄 License
 
 This project is open-source and available under the MIT License.
