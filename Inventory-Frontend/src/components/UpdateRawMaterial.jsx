@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './css/UpdateRawMaterial.css'
+import { BACKEND_URL } from '../config';
 
 const UpdateRawMaterial = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const UpdateRawMaterial = () => {
   useEffect(() => {
     const fetchRawMaterial = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/raw_materials/${id}/`);
+        const response = await axios.get(`${BACKEND_URL}/raw_materials/${id}/`);
         setRawMaterial(response.data);
       } catch (err) {
         console.error("Error fetching raw material:", err);
@@ -42,13 +43,13 @@ const UpdateRawMaterial = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/raw_materials/${id}/`, {
+      const response = await axios.put(`${BACKEND_URL}/raw_materials/${id}/`, {
         quantity_to_add: quantityToAdd,
         price_to_add: priceToAdd,
       });
       setRawMaterial(response.data);
 
-      await axios.post('http://localhost:8000/api/transactions/', {
+      await axios.post(`${BACKEND_URL}/transactions/`, {
         raw_material: id,
         transaction_type: 'add',
         quantity: quantityToAdd,
@@ -71,12 +72,12 @@ const UpdateRawMaterial = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:8000/api/raw_materials/${id}/`, {
+      const response = await axios.put(`${BACKEND_URL}/raw_materials/${id}/`, {
         quantity_to_remove: quantityToRemove,
       });
       setRawMaterial(response.data);
 
-      await axios.post('http://localhost:8000/api/transactions/', {
+      await axios.post(`${BACKEND_URL}/transactions/`, {
         raw_material: id,
         transaction_type: 'remove',
         quantity: quantityToRemove,

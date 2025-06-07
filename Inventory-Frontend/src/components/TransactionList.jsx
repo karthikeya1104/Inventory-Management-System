@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './css/TransactionList.css'
+import { BACKEND_URL } from '../config';
 
 const TransactionList = () => {
     const [transactions, setTransactions] = useState([]);
@@ -8,7 +9,7 @@ const TransactionList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/transactions/')
+        axios.get(`${BACKEND_URL}/transactions/`)
             .then(response => {
                 setTransactions(response.data);
                 setLoading(false);
@@ -21,7 +22,7 @@ const TransactionList = () => {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:8000/api/transactions/${id}/`)
+        axios.delete(`${BACKEND_URL}/transactions/${id}/`)
             .then(() => {
                 setTransactions(transactions.filter(transaction => transaction.id !== id));
                 alert('Transaction deleted successfully');

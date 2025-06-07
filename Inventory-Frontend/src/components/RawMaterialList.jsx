@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './css/RawMaterialList.css'
+import { BACKEND_URL } from '../config';
 
 const RawMaterialList = () => {
     const [rawMaterials, setRawMaterials] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get('http://localhost:8000/api/raw_materials/')
+        axios.get(`${BACKEND_URL}/raw_materials/`)
           .then(response => { 
             setRawMaterials(response.data); 
           })
@@ -21,7 +22,7 @@ const RawMaterialList = () => {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:8000/api/raw_materials/${id}/`)
+        axios.delete(`${BACKEND_URL}/raw_materials/${id}/`)
             .then(response => {
                 setRawMaterials(rawMaterials.filter(rawMaterial => rawMaterial.id !== id));
             })

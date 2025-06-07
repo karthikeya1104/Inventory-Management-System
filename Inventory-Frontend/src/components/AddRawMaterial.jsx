@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './css/AddRawMaterials.css'
+import { BACKEND_URL } from '../config';
 
 const AddRawMaterial = () => {
     const [name, setName] = useState('');
@@ -18,7 +19,7 @@ const AddRawMaterial = () => {
             price_per_unit: parseFloat(price) 
         };
     
-        axios.post('http://localhost:8000/api/raw_materials/', newRawMaterial)
+        axios.post(`${BACKEND_URL}/raw_materials/`, newRawMaterial)
             .then(response => {
                 alert('Raw material added successfully');
                 setName('');
@@ -32,7 +33,7 @@ const AddRawMaterial = () => {
                     price_per_unit: response.data.price_per_unit
                 };
     
-                axios.post('http://localhost:8000/api/transactions/', transactionData)
+                axios.post(`${BACKEND_URL}/transactions/`, transactionData)
                     .then(() => {
                         console.log("Transaction logged successfully");
                     })

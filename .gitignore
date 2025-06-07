@@ -14,16 +14,13 @@ __pycache__/
 *.pot
 *.pyc
 *.sqlite3
-backend/db.sqlite3
-backend/media/
-backend/staticfiles/
+Inventory-Backend/db.sqlite3
+Inventory-Backend/media/
+Inventory-Backend/staticfiles/
+Inventory-Backend/.env
 
 # ---- Virtual Environments ----
 venv/
-env/
-ENV/
-.venv/
-.virtualenv/
 
 # ---- pipenv ----
 Pipfile.lock
@@ -45,6 +42,7 @@ frontend/package-lock.json
 frontend/yarn.lock
 frontend/.pnp/
 frontend/.pnp.js
+frontend/src/.env
 
 # ---- React Build ----
 frontend/build/
