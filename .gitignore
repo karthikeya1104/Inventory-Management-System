@@ -43,6 +43,8 @@ Inventory-Frontend/yarn.lock
 Inventory-Frontend/.pnp/
 Inventory-Frontend/.pnp.js
 Inventory-Frontend/.env
+.env
+.env.*
 
 # ---- React Build ----
 Inventory-Frontend/build/
