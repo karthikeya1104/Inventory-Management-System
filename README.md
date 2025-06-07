@@ -1,7 +1,7 @@
-📦 Inventory Management System
+# 📦 Inventory Management System
 A full-stack web application for managing inventory, built with Django (backend) and React (frontend). It allows users to manage raw materials, track stock, and perform CRUD operations via a clean and modern interface.
 
-🚀 Features
+# 🚀 Features
 
 📊 Raw materials management
 
@@ -14,7 +14,7 @@ A full-stack web application for managing inventory, built with Django (backend)
 ⚛️ Interactive frontend with React and Axios
 
 
-🛠 Tech Stack
+# 🛠 Tech Stack
 
 Layer	Tech
 
@@ -27,9 +27,9 @@ Database	SQLite (dev) / PostgreSQL (prod recommended)
 Environment	Python, Node.js
 
 
-⚙️ Setup Instructions
+# ⚙️ Setup Instructions
 
-🐍 Backend (Django)
+# 🐍 Backend (Django)
 
 Navigate to backend:
 
@@ -67,7 +67,7 @@ python manage.py migrate
 python manage.py runserver
 
 
-⚛️ Frontend (React)
+# ⚛️ Frontend (React)
 
 
 Navigate to frontend:
@@ -121,7 +121,7 @@ bash
 npm test
 
 
-🚀 Deployment
+# 🚀 Deployment
 
 You can deploy the backend to platforms like Heroku, Render, or DigitalOcean, and the frontend to Vercel, Netlify, or GitHub Pages.
 
