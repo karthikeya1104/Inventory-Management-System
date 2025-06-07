@@ -34,18 +34,18 @@ dmypy.json
 pyrightconfig.json
 
 # ---- React / Node ----
-frontend/node_modules/
+Inventory-Frontend/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-frontend/package-lock.json
-frontend/yarn.lock
-frontend/.pnp/
-frontend/.pnp.js
-frontend/src/.env
+Inventory-Frontend/package-lock.json
+Inventory-Frontend/yarn.lock
+Inventory-Frontend/.pnp/
+Inventory-Frontend/.pnp.js
+Inventory-Frontend/.env
 
 # ---- React Build ----
-frontend/build/
+Inventory-Frontend/build/
 dist/
 build/
 
